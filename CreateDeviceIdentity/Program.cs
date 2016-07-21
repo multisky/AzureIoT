@@ -20,9 +20,7 @@ namespace CreateDeviceIdentity
 
             for (int num = 1; num < count; num++)
             {
-                deviceIdVal = ("0000" + num.ToString());
-                deviceIdVal = deviceIdVal.Substring(deviceIdVal.Length - 5);
-
+                deviceIdVal = num.ToString("D5");
                 deviceId = $"{deviceIdTemplate}{deviceIdVal}";
 
                 AddDeviceAsync(deviceId).Wait();
